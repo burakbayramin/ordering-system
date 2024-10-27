@@ -1,6 +1,6 @@
 # Ordering System Project
 
-This project is designed to help you learn microservices architecture while applying Clean Architecture, Hexagonal Architecture, and Domain-Driven Design (DDD) principles.
+This project demonstrates microservices architecture while applying Clean Architecture, Hexagonal Architecture, and Domain-Driven Design (DDD) principles.
 
 ## Table of Contents
 - [Overview](#overview)
