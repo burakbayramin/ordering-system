@@ -21,7 +21,6 @@ This project demonstrates microservices architecture while applying Clean Archit
   - [Running the Services](#running-the-services)
 - [Deployment](#deployment)
   - [Local Kubernetes with Docker Desktop](#local-kubernetes-with-docker-desktop)
-  - [Kubernetes on Google Cloud with GKE](#kubernetes-on-google-cloud-with-gke)
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
@@ -129,6 +128,9 @@ mvn spring-boot:run
 ```bash
 kubectl apply -f kubernetes/
 ```
+
+## Project Structure
+
 
 ## Contributing
 
