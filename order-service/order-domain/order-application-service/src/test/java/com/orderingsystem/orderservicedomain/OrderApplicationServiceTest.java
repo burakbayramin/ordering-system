@@ -171,4 +171,19 @@ public class OrderApplicationServiceTest {
                 () -> orderApplicationService.createOrder(createOrderCommandWrongProductPrice));
         assertEquals("Order item price: 60.00 is not valid for product " + PRODUCT_ID, orderDomainException.getMessage());
     }
+
+    @Test
+    public void testCreateOrderWithPassiveShop() {
+        Shop shopResponse = Shop.builder()
+                .shopId(new ShopId(createOrderCommand.getShopId()))
+                .products(List.of(new Product(new ProductId(PRODUCT_ID), "product-1", new Money(new BigDecimal("50.00"))),
+                        new Product(new ProductId(PRODUCT_ID), "product-2", new Money(new BigDecimal("50.00")))))
+                .active(false)
+                .build();
+        when(shopRepository.findShopInformation(orderDataMapper.createOrderCommandToShop(createOrderCommand)))
+                .thenReturn(Optional.of(shopResponse));
+        OrderDomainException orderDomainException = assertThrows(OrderDomainException.class,
+                () -> orderApplicationService.createOrder(createOrderCommand));
+        assertEquals("Shop with id " + SHOP_ID + " is currently not active!", orderDomainException.getMessage());
+    }
 }
