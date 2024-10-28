@@ -65,6 +65,11 @@
             </dependency>
             <dependency>
                 <groupId>com.orderingsystem</groupId>
+                <artifactId>common-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.orderingsystem</groupId>
                 <artifactId>kafka-config-data</artifactId>
                 <version>${project.version}</version>
             </dependency>
